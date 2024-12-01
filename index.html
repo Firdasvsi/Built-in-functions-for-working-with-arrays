@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>Задача 1: Подсчёт гласных букв</h3>
+    <script>
+        const countVowels = (word) => {
+            const vowels = ['a', 'e', 'i', 'o', 'u'];
+            return [...word.toLowerCase()]
+                .filter(letter => vowels.includes(letter))
+                .length;
+        };
+
+        console.log(countVowels("Hello"));
+        console.log(countVowels("JavaScript"));
+        console.log(countVowels("WORLD"));
+
+
+
+    </script>
+    <h5>Задача 2
+        Допустим, у нас есть массив массивов пользователей. Каждый массив представляет пользователя с полями «имя»,
+        «возраст» и «занятие спортом». Ваша задача — отфильтровать пользователей по возрасту, а затем отсортировать их
+        по возрастанию возраста и вернуть имена пользователей, занимающихся спортом.
+
+        Для этого можно использовать массив пользователей или составить свой:</h5>
+    <script>
+
+        const filterAndSortUsers = (users) => {
+            return users
+                .filter(user => user[1] > 25 && user[2])
+                .sort((a, b) => a[1] - b[1])
+
+                .map(user => user[0]);
+        };
+        const users = [
+            ["Alice", 25, true],
+            ["Bob", 30, false],
+            ["Charlie", 22, true],
+            ["David", 27, true],
+            ["Eve", 20, false]
+        ];
+
+
+        const sportUsersOver25 = filterAndSortUsers(users);
+        console.log(sportUsersOver25);
+
+    </script>
+</body>
+
+</html>
